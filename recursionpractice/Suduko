@@ -3,21 +3,21 @@ object SudoCode extends App{
   def isSafe(board: Array[Array[Int]], row: Int, col: Int, num: Int):Boolean={
     val sr = 3*(row/3)
     val sc = 3*(col/3)
-    validateRow(board,row,0,num) && validateCol(arr,0,col,num) && validateGrid(arr,row,col,num,sr,sc)
+    validateRow(board,row,0,num) && validateCol(board,0,col,num) && validateGrid(board,row,col,num,sr,sc)
   }
   def validateRow(board: Array[Array[Int]], row: Int, col: Int, num: Int):Boolean={
     col match {
-      case x if x == arr.length-1 => true
+      case x if x == board.length-1 => true
       case x if board(row)(col) == num => false
-      case x => validateRow(arr,row,col+1,num)
+      case x => validateRow(board,row,col+1,num)
     }
   }
 
   def validateCol(board: Array[Array[Int]], row: Int, col: Int, num: Int):Boolean={
     row match {
-      case x if x == arr.length-1 => true
+      case x if x == board.length-1 => true
       case x if board(row)(col) == num => false
-      case x => validateCol(arr,row+1,col,num)
+      case x => validateCol(board,row+1,col,num)
     }
   }
 
