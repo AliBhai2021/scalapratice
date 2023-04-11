@@ -51,10 +51,10 @@ object Queen extends App{
   def isSafe(row:Int,col:Int,board:Array[Array[Int]]):Boolean={
     (validateHorizantal(row,0,board) &&
       validateVertical(0,col,board) &&
-      validateUpperLeft(row,col,arr)  &&
-      validateUpperRight(row,col,arr) &&
-      validateLowerRight(row,col,arr) &&
-      validateLowerLeft(row,col,arr))
+      validateUpperLeft(row,col,board)  &&
+      validateUpperRight(row,col,board) &&
+      validateLowerRight(row,col,board) &&
+      validateLowerLeft(row,col,board))
   }
 
 /*  def saveBoard(board:Array[Array[Int]], allBoards:Set[List[String]]):Set[List[String]]= {

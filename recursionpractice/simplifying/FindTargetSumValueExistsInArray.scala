@@ -1,3 +1,5 @@
+package simplifying
+
 object FindTargetSumValueExistsInArray extends App{
   var count =0
   var exists : Boolean=false

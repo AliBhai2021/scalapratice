@@ -9,9 +9,9 @@ object BinarySearch extends App {
       //println("mid ="+mid+"   Value :"+arr(mid)+ "  low="+low+"  High="+high)
       mid match {
         case x if arr(x) == key => true
-        case x if low >= high => println("low :"+low+"   high :"+high); false
         case x if arr(x) < key => search(mid + 1, high)
         case x if arr(x) > key => search(low, mid)
+        case _ => println("low :"+low+"   high :"+high); false
       }
     }
     search(0,arr.length-1)

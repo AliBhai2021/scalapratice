@@ -6,7 +6,7 @@ object MobileKeyBoardPatterns extends App{
     str match{
       case x if x.isEmpty => println(res)
       case x =>
-        for(letter <- keypad(x(0)-48))
+        for(letter <- keypad(str(0)-48))
         mobileKeyPadString(str.substring(1),res+letter)
     }
   }

@@ -1,13 +1,17 @@
+package simplifying
+
+import scala.collection.mutable
+
 object WaysToClimbSteps extends App{
   var result=0
   var count=0
+  var check = mutable.LinkedHashMap[Int,Int]()
   def climbSteps(target:Int,arr:Array[Int],s:String=""):Int={
-    //println("taret :"+target)
-
     target match {
       case x if x == 0 =>
                           result +=1; count +=1
                           println(count +" steps :"+s)
+                          check
                           result
       case x if x <0 => 0
       case x =>
