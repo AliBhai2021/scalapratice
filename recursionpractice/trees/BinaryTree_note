@@ -8,6 +8,7 @@
   b. Find total nodes in BT
   c. Find sum value of nodes
   d. Find Diameter of BT
+  e. Find Leaf and Non-Leaf nodes count
 
 3.Binary Tree Traversal
   a. Preorder
