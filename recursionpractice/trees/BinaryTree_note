@@ -1,0 +1,22 @@
+1.Create Binary Tree
+  a. Using given Array with half operation
+  b. Auto Generate complete Binary Tree.
+  c. Using Array with negitive values as leaf
+
+2.Binary Tree Find operation
+  a. Find height of tree
+  b. Find total nodes in BT
+  c. Find sum value of nodes
+  d. Find Diameter of BT
+
+3.Binary Tree Traversal
+  a. Preorder
+  b. InOrder
+  c. PostOrder
+
+4.Binary Tree Operation
+  a. Add element in BT
+  b. Delete element from BT
+  c. Search element
+  d. Flip BT
+  e. Compare two BT
