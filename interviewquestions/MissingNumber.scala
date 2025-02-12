@@ -2,8 +2,8 @@ package interviewquestions
 
 object MissingNumber extends App{
 
-  println(findMissingNumber(Array(9,6,4,2,3,5,7,0,1)))
-  println(findMissingNumber(Array(0,1)))
+  println("findMissingNumber :"+ findMissingNumber(Array(9,6,4,2,3,5,7,0,1,2,3,2)))
+  println("findMissingNumber :"+findMissingNumber(Array(0,1)))
 
   def findMissingNumber(nums: Array[Int]): Int = {
     var i=0
@@ -15,6 +15,8 @@ object MissingNumber extends App{
       else
         i +=1
     }
+    nums.foreach(print(_))
+    println(" ")
 
     for(j <-0 until nums.length){
       if(nums(j) != j)

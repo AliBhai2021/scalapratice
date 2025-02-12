@@ -7,7 +7,6 @@ object StringPalindrom extends App{
 
     val x = for(str <- inputString.length until 0 by -1) yield inputString(str-1)
     (inputString == x.mkString(""))
-
   }
 
   println(solution("ababbbaba"))

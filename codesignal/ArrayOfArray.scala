@@ -23,4 +23,5 @@ object ArrayOfArray extends App{
 
 
   println(solution(arr))
+
 }
