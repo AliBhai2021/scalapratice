@@ -11,11 +11,11 @@ object Prac02_ReverseString extends App{
 
   def reverseString(s:Array[Char]) :Unit={
     val st = new mutable.Stack[Char]
-    for(i <- 0 until s.length()){
+    for(i <- 0 until s.length){
       st.push(s(i))
     }
     st.foreach(print(_))
-    for(i <- 0 until s.length()){
+    for(i <- 0 until s.length){
       s(i) = st.top
       st.pop();
     }
@@ -26,11 +26,11 @@ object Prac02_ReverseString extends App{
 
   def reverseString2(s:Array[Char]) :Unit= {
     val st = new mutable.Stack[Char]
-    for (i <- 0 until s.length()) {
-      st.push(s.charAt(i))
+    for (i <- 0 until s.length) {
+      st.push(s(i))
     }
     st.foreach(print(_))
-    for (i <- 0 until s.length()) {
+    for (i <- 0 until s.length) {
       s(i)=  st.top
       st.pop()
     }

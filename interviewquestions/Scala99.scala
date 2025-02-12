@@ -38,7 +38,7 @@ object Scala99 extends  App{
   println("l2 :"+l2)
 
   var listtest = List(1,2,3)
-  println(listtest)
+  println("listtest : " +listtest)
   listtest = listtest ::: List(4)
   println(listtest)
 
@@ -49,6 +49,7 @@ object Scala99 extends  App{
   println(listtest)
 
   //listtest = listtest + (7)
+  listtest = listtest ++ List(7)
   println(listtest)
 
 

@@ -91,6 +91,7 @@ object Mphasis extends App with Serializable {
 val test1 = List(("emp1","city1","dept1",200),("emp2","city1","dept1",100),("emp3","city1","dept2",100),("emp4","city1","dept2",50),
   ("emp5","city2","dept1",200),("emp6","city2","dept1",100),("emp7","city2","dept2",100),("emp8","city2","dept2",50))
   .toDF("empname","city","dept","salary")
+  test1.show(false)
   test1.groupBy("city","dept").agg(avg("salary").alias("avgSalary")).show(false)
   test1.groupBy("city","dept").agg(avg("salary").alias("avgSalary"))
     . groupBy("city").max("avgSalary")
@@ -100,9 +101,18 @@ val test1 = List(("emp1","city1","dept1",200),("emp2","city1","dept1",100),("emp
   val emp = List(("emp1","city1","dept1",200),("emp2","city1","dept1",100),("emp3","city1","dept2",100),("emp4","city1","dept2",50),
     ("emp5","city2","dept1",200),("emp6","city2","dept1",100),("emp7","city2","dept2",100),("emp8","city2","dept2",50))
     .toDF("empname","city","dept","salary")
+
   emp.groupBy("city","dept").agg(avg("salary").alias("avgSalary"))
-    .withColumn("rank" ,lit(dense_rank().over(Window.partitionBy("city")
-                                  .orderBy($"avgSalary".desc))))
+     .show(false)
+
+  emp.groupBy("city","dept").agg(avg("salary").alias("avgSalary"))
+    .withColumn("rank" ,dense_rank().over(Window.partitionBy("city")
+    .orderBy($"avgSalary".desc)))
     //.where("rank ==1")
+    .show()
+  emp.groupBy("city","dept").agg(avg("salary").alias("avgSalary"))
+    .withColumn("rank" ,dense_rank().over(Window.partitionBy("city")
+      .orderBy($"avgSalary".desc)))
+    .where("rank ==1")
     .show()
 }

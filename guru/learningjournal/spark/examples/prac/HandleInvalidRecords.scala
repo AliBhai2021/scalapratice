@@ -15,6 +15,7 @@ object HandleInvalidRecords extends Serializable {
       .getOrCreate()
     //=====================================================================
 
+/*
     val EmployeeInfoDF = spark.read
       .schema("ID Integer,Name String,Salary Integer")
       .option("columnNameOfCorruptRecord", "_corrupt_record")
@@ -25,6 +26,8 @@ object HandleInvalidRecords extends Serializable {
 
       .csv("data/sampleCsvFile.csv")
     EmployeeInfoDF.show()
+*/
+
 
     val data = """{"a": 1, "b":2, "c":3}|{"a": 1, "b":2, "c":3}|{"a": 1, "b, "c":10}""".split('|')
     val corruptDf = spark.read.option("mode", "PERMISSIVE")
@@ -32,6 +35,7 @@ object HandleInvalidRecords extends Serializable {
       .option("badRecordsPath","tmp")
       .json(spark.sparkContext.parallelize(data))
         corruptDf.show()
+
 
     spark.stop()
   }

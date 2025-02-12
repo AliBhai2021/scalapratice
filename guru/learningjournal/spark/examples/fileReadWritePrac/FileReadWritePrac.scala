@@ -33,7 +33,7 @@ object FileReadWritePrac extends App{
         //using DataFrame Operation
         dfData.withColumn("words", split(col("words"),","))
           .withColumn("words", explode(col("words")))
-          .withColumn("id",lit(1))
+         // .withColumn("id",lit(1))
           .groupBy("words").agg(count("*"))
           .show(false)
 

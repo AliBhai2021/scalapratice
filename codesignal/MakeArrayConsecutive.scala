@@ -20,7 +20,7 @@ object MakeArrayConsecutive extends App {
       //if(flag==false)
     }
 
-    statues.foreach(println(_))
+    statues.foreach(print(_));println("")
     println("length : "+statues.length)
     println("element : "+statues(statues.length-1))
     println("element_1: "+statues(0))

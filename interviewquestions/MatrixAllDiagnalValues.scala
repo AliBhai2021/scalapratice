@@ -48,9 +48,9 @@ object MatrixAllDiagnalValues {
     var cols = mat(0).length
     var rows = mat.length
     val total_diagnals = cols+rows-1
+    println("total_diagnals = "+total_diagnals)
 
     for( d <- 1 to total_diagnals){
-
       if(d <= cols) {
         var i = if (d % 2 == 0) 0 else d - 1
         var j = if (d % 2 == 0) d - 1 else 0
@@ -62,10 +62,9 @@ object MatrixAllDiagnalValues {
         }
       }
       else {
-
         var i = if (d % 2 == 0) d-cols else cols-1
         var j = if (d % 2 == 0) cols-1 else d-cols
-        println(s"(i,j) = ${i},${j}, total_diagnals = ${total_diagnals}, d = ${d}")
+        //println(s"(i,j) = ${i},${j}, total_diagnals = ${total_diagnals}, d = ${d}")
         for (r <- 0 to total_diagnals-d) {
           if (d % 2 == 0)
             print(s"${mat(i + r)(j - r)} ")
@@ -78,7 +77,10 @@ object MatrixAllDiagnalValues {
   }
   // Driver code
   def main(args: Array[String]): Unit = {
-    val mat = Array(Array(1, 2, 3, 4), Array(5, 6, 7, 8), Array(9, 10, 11, 12),Array(13, 14, 15, 16))
+    val mat = Array(Array(1, 2, 3, 4),
+                    Array(5, 6, 7, 8),
+                    Array(9, 10, 11, 12),
+                    Array(13, 14, 15, 16))
     val n = 3
     println(mat(0).length)
     println(mat.length)

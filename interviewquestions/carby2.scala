@@ -21,7 +21,7 @@ object carby2 extends App{
         }
       }
     h.foreach(println(_))
-    h.toSeq.sortWith(_._2>_._2). map(x=> s"${x._1} ${x._2}").toArray
+    h.toSeq.sortWith(_._2 > _._2). map(x=> s"${x._1} ${x._2}").toArray
   }
 
 

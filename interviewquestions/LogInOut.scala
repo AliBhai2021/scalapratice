@@ -31,13 +31,14 @@ object LogInOut extends App {
   //usin Data Frame
   df.withColumn( "col2", lit(row_number().over(Window.partitionBy("name").orderBy("id"))))
     .withColumn("col3", col("id")-col("col2"))
-    .groupBy("name","col3").count().as("cnt")
+    .groupBy("name","col3").agg(count("col3").as("cnt"))
     //.select("name", "cnt")
     .show()
 
   //============================================= login / logoff ===========================================
-  println(":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::")
-  val worksession = List((10.01,"on"),(10.02,"on"),(10.03,"on"),(10.04,"off"),(10.07,"on"),(10.08,"on"),(10.09,"off"))
+  println("::::::::::::::::::::::::::::login / logoff :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::")
+  val worksession = List((10.01,"on"),(10.02,"on"),(10.03,"on"),(10.04,"off"),(10.07,"on"),(10.08,"on"),(10.09,"off"),
+                        (11.00 ,"on"),(11.02,"on"),(11.03,"on"),(11.04,"off"),(11.07,"on"),(11.08,"on"),(11.09,"off"))
     .toDF("time","status")
 
   import org.apache.spark.sql.functions._

@@ -2,7 +2,7 @@ package interviewquestions
 
 object MissingPositiveNumber extends App{
 
-  println(firstMissingPositive(Array(3,4,-1,1)))
+  println("firstMissingPositive : "+firstMissingPositive(Array(3,4,-1,1,-2)))
   println(firstMissingPositive(Array(1,2,4,5)))
   println(firstMissingPositive(Array(7,8,9,11,12)))
   println(firstMissingPositive(Array(1)))
@@ -12,13 +12,13 @@ object MissingPositiveNumber extends App{
     var i=0
     while(i<nums.length){
       var correctvalue = nums(i)-1
-
       if(nums(i)>0 && nums(i) <= nums.length && nums(i) != nums(correctvalue))
         swap(nums,i,correctvalue)
       else
         i +=1
     }
-
+    nums.foreach(print(_))
+    println(" ")
     for(j <- 0 until nums.length){
       if(nums(j) != j+1)
         return j+1

@@ -1,6 +1,6 @@
 package guru.learningjournal.spark.examples
 
-import org.apache.log4j.Logger
+import org.apache.log4j._
 import org.apache.spark.sql.{Dataset, Row, SparkSession}
 
 case class SurveyRecord(Age: Int, Gender: String, Country: String, state: String)
